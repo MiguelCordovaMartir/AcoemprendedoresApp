@@ -31,6 +31,9 @@ namespace CooperativaApp
 
             // Seleccionar el primer elemento como predeterminado
             cmbProducto.SelectedIndex = 0;
+
+            // Cargar los clientes en el DataGridView
+            CargarClientes();
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -61,10 +64,41 @@ namespace CooperativaApp
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cliente agregado correctamente.");
+
+                // Llamar a CargarClientes() para actualizar el DataGridView
+                CargarClientes();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al agregar cliente: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void CargarClientes()
+        {
+            string connectionString = "server=localhost;user=root;database=acoemprendedores;password=1202M2708i2024g;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Clientes";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                adapter.Fill(dt);
+
+                // Asignar el DataTable al DataGridView
+                dataGridViewClientes.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar clientes: " + ex.Message);
             }
             finally
             {

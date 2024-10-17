@@ -34,6 +34,8 @@ namespace CooperativaApp
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDUI = new System.Windows.Forms.TextBox();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
+            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarCliente
@@ -75,11 +77,20 @@ namespace CooperativaApp
             this.cmbProducto.Size = new System.Drawing.Size(121, 21);
             this.cmbProducto.TabIndex = 4;
             // 
+            // dataGridViewClientes
+            // 
+            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientes.Location = new System.Drawing.Point(85, 143);
+            this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.Size = new System.Drawing.Size(580, 176);
+            this.dataGridViewClientes.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 356);
+            this.ClientSize = new System.Drawing.Size(740, 379);
+            this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.txtApellido);
@@ -88,6 +99,7 @@ namespace CooperativaApp
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +112,7 @@ namespace CooperativaApp
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDUI;
         private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.DataGridView dataGridViewClientes;
     }
 }
 
