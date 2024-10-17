@@ -29,20 +29,77 @@ namespace CooperativaApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtDUI = new System.Windows.Forms.TextBox();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Location = new System.Drawing.Point(403, 24);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(100, 23);
+            this.btnAgregarCliente.TabIndex = 0;
+            this.btnAgregarCliente.Text = "Agregar Cliente";
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(171, 12);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(171, 49);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 2;
+            // 
+            // txtDUI
+            // 
+            this.txtDUI.Location = new System.Drawing.Point(171, 76);
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(100, 20);
+            this.txtDUI.TabIndex = 3;
+            // 
+            // cmbProducto
+            // 
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(171, 102);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(121, 21);
+            this.cmbProducto.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 344);
+            this.ClientSize = new System.Drawing.Size(565, 356);
+            this.Controls.Add(this.cmbProducto);
+            this.Controls.Add(this.txtDUI);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.btnAgregarCliente);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtDUI;
+        private System.Windows.Forms.ComboBox cmbProducto;
     }
 }
 
